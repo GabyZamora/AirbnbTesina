@@ -2,24 +2,24 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('nombreLugar') }}
+            {{ Form::label('Nombre de Hospedaje') }}
             {{ Form::text('nombreLugar', $lugare->nombreLugar, ['class' => 'form-control' . ($errors->has('nombreLugar') ? ' is-invalid' : ''), 'placeholder' => 'Nombrelugar']) }}
             {!! $errors->first('nombreLugar', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('idCategoria') }}
-            {{ Form::text('idCategoria', $lugare->idCategoria, ['class' => 'form-control' . ($errors->has('idCategoria') ? ' is-invalid' : ''), 'placeholder' => 'Idcategoria']) }}
+            {{ Form::label('Tipo de Hospedaje') }}
+            {{ Form::select('idCategoria', $categoria, $lugare->idCategoria, ['class' => 'form-control' . ($errors->has('idCategoria') ? ' is-invalid' : ''), 'placeholder' => 'Idcategoria']) }}
             {!! $errors->first('idCategoria', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        </div>       
         <div class="form-group">
-            {{ Form::label('idMunicipio') }}
-            {{ Form::text('idMunicipio', $lugare->idMunicipio, ['class' => 'form-control' . ($errors->has('idMunicipio') ? ' is-invalid' : ''), 'placeholder' => 'Idmunicipio']) }}
-            {!! $errors->first('idMunicipio', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('idDepartamento') }}
-            {{ Form::text('idDepartamento', $lugare->idDepartamento, ['class' => 'form-control' . ($errors->has('idDepartamento') ? ' is-invalid' : ''), 'placeholder' => 'Iddepartamento']) }}
+            {{ Form::label('Departamento') }}
+            {{ Form::select('idDepartamento', $departamento, $lugare->idDepartamento, ['class' => 'form-control' . ($errors->has('idDepartamento') ? ' is-invalid' : ''), 'placeholder' => 'Iddepartamento']) }}
             {!! $errors->first('idDepartamento', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('Municipio') }}
+            {{ Form::select('idMunicipio', $municipio, $lugare->idMunicipio, ['class' => 'form-control' . ($errors->has('idMunicipio') ? ' is-invalid' : ''), 'placeholder' => 'Idmunicipio']) }}
+            {!! $errors->first('idMunicipio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('latitud') }}
@@ -37,13 +37,13 @@
             {!! $errors->first('Descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('mascotas') }}
+            {{ Form::label('¿Se admiten mascotas?') }}
             {{ Form::text('mascotas', $lugare->mascotas, ['class' => 'form-control' . ($errors->has('mascotas') ? ' is-invalid' : ''), 'placeholder' => 'Mascotas']) }}
             {!! $errors->first('mascotas', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Imagen') }}
-            {{ Form::text('Imagen', $lugare->Imagen, ['class' => 'form-control' . ($errors->has('Imagen') ? ' is-invalid' : ''), 'placeholder' => 'Imagen']) }}
+            {{ Form::file('Imagen', $lugare->Imagen, ['class' => 'form-control' . ($errors->has('Imagen') ? ' is-invalid' : ''), 'placeholder' => 'Imagen']) }}
             {!! $errors->first('Imagen', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -59,6 +59,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
     </div>
 </div>

@@ -38,14 +38,14 @@
             <div class="password-olvidada">
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Olvidaste tu contraseña?') }}
+                        {{ __('¿Olvidaste tu contraseña?') }}
                     </a>
                 @endif
             </div>
             <div class="input">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Iniciar sesion') }}
-                    </button>
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Iniciar sesion') }}
+                </button>
             </div>
         </form>
     </div>

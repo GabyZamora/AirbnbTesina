@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('usuario');
             $table->string('email');
             $table->string('password');
-            $table->boolean('idRol');
+            $table->bigInteger('idRol');
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('idRol')->references('id')->on('roles')->onDelete("cascade");

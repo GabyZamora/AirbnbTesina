@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Categoria;
+use App\Models\Departamento;
+use App\Models\Municipio;
 use App\Models\Lugare;
 use Illuminate\Http\Request;
 
@@ -32,7 +34,10 @@ class LugareController extends Controller
     public function create()
     {
         $lugare = new Lugare();
-        return view('lugare.create', compact('lugare'));
+        $categoria = Categoria::pluck('categoria','id');
+        $departamento = Departamento::pluck('departamento','id');
+        $municipio = Municipio::pluck('municipio','id');
+        return view('lugare.create', compact('lugare','categoria','departamento','municipio'));
     }
 
     /**
@@ -73,8 +78,10 @@ class LugareController extends Controller
     public function edit($id)
     {
         $lugare = Lugare::find($id);
-
-        return view('lugare.edit', compact('lugare'));
+        $categoria = Categoria::pluck('categoria','id');
+        $departamento = Departamento::pluck('departamento','id');
+        $municipio = Municipio::pluck('municipio','id');
+        return view('lugare.edit', compact('lugare','categoria','departamento','municipio'));
     }
 
     /**

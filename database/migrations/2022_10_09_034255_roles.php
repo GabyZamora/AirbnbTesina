@@ -13,7 +13,7 @@ class Roles extends Migration
      */
     public function up()
     {
-        Schema::create('departamentos', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Rol');  
             $table->timestamps(); 

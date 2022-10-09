@@ -70,5 +70,9 @@ class Lugare extends Model
         return $this->hasOne('App\Models\Municipio', 'id', 'idMunicipio');
     }
     
+    public function departamento()
+    {
+        return $this->hasOne('App\Models\Departamento', 'id', 'idDepartamento');
+    }
 
 }

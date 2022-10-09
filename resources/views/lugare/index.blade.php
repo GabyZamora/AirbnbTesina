@@ -16,11 +16,11 @@
                                 {{ __('Lugare') }}
                             </span>
 
-                             <div class="float-right">
+                            <div class="float-right">
                                 <a href="{{ route('lugares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                {{ __('Create New') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -57,7 +57,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $lugare->nombreLugar }}</td>
-											<td>{{ $lugare->idCategoria }}</td>
+											<td>{{ $lugare->categoria->categoria }}</td>
 											<td>{{ $lugare->idMunicipio }}</td>
 											<td>{{ $lugare->idDepartamento }}</td>
 											<td>{{ $lugare->latitud }}</td>
